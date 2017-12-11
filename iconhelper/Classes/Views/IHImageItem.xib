@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="IHImageItem">
+            <connections>
+                <outlet property="coverImage" destination="Roa-DQ-dLm" id="N2K-An-093"/>
+                <outlet property="pathLab" destination="mB8-cG-l3x" id="MAD-SJ-QAH"/>
+                <outlet property="preview" destination="Gu2-2T-Ivw" id="I3k-tG-mSC"/>
+                <outlet property="titleLab" destination="zq1-S4-xGo" id="zqh-v1-c2n"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gu2-2T-Ivw">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                    <imageCell key="cell" enabled="NO" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="K66-4X-AI8"/>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zq1-S4-xGo">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="8yU-qP-9fM"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" drawsBackground="YES" id="S9m-cA-NwX">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10327482876712329" colorSpace="custom" customColorSpace="displayP3"/>
+                    </textFieldCell>
+                </textField>
+                <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Roa-DQ-dLm">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="selectcover" id="z78-kQ-LhJ"/>
+                </imageView>
+                <textField hidden="YES" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="mB8-cG-l3x">
+                    <rect key="frame" x="0.0" y="283" width="300" height="17"/>
+                    <textFieldCell key="cell" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" drawsBackground="YES" id="AcY-LW-3r3">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="deviceWhite"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="zq1-S4-xGo" secondAttribute="bottom" id="2cs-H1-kgZ"/>
+                <constraint firstItem="Roa-DQ-dLm" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="Auq-qB-Glv"/>
+                <constraint firstItem="Roa-DQ-dLm" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="BXh-Gn-Jyr"/>
+                <constraint firstAttribute="bottom" secondItem="Roa-DQ-dLm" secondAttribute="bottom" id="GKq-mk-Sm6"/>
+                <constraint firstItem="mB8-cG-l3x" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="RES-zc-w8l"/>
+                <constraint firstItem="mB8-cG-l3x" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="Vks-so-fQX"/>
+                <constraint firstAttribute="trailing" secondItem="mB8-cG-l3x" secondAttribute="trailing" id="Zbt-DZ-hdW"/>
+                <constraint firstAttribute="trailing" secondItem="zq1-S4-xGo" secondAttribute="trailing" id="dQM-1g-YMR"/>
+                <constraint firstItem="Gu2-2T-Ivw" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="enY-Gh-z4C"/>
+                <constraint firstAttribute="trailing" secondItem="Roa-DQ-dLm" secondAttribute="trailing" id="ivB-yT-NmD"/>
+                <constraint firstAttribute="bottom" secondItem="Gu2-2T-Ivw" secondAttribute="bottom" id="jhQ-yL-fhA"/>
+                <constraint firstItem="zq1-S4-xGo" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="lS1-qd-15G"/>
+                <constraint firstAttribute="trailing" secondItem="Gu2-2T-Ivw" secondAttribute="trailing" id="prc-uB-MLS"/>
+                <constraint firstItem="Gu2-2T-Ivw" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="wg5-VK-tIT"/>
+            </constraints>
+            <point key="canvasLocation" x="-14" y="124"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="selectcover" width="300" height="300"/>
+    </resources>
+</document>
