@@ -7,9 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "IHHandleFileDelegate.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
+@property (nonatomic, weak) id <IHHandleFileDelegate> handleFileDelegate;
 
 @end
 

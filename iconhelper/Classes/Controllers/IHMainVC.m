@@ -12,8 +12,9 @@
 #import "IHConfigVC.h"
 #import "IHConfig.h"
 #import "IHSelectImageVC.h"
+#import "AppDelegate.h"
 
-@interface IHMainVC () <IHConfigVCDelegate>
+@interface IHMainVC () <IHConfigVCDelegate, IHHandleFileDelegate>
 
 @property (weak) IBOutlet NSButton *importBtn;
 @property (weak) IBOutlet NSButton *configBtn;
@@ -33,6 +34,10 @@
     
     _selectItems = @[].mutableCopy;
     _config = [IHConfig lastConfig];
+    
+    AppDelegate *delegate = [NSApplication sharedApplication].delegate;
+    
+    delegate.handleFileDelegate = self;
 }
 
 - (void)setupUI {
@@ -92,15 +97,16 @@
     __weak typeof(self) weakself = self;
     IHImageGenerator *generator = [IHImageGenerator generator];
     generator.destination = IHConfig.destination;
-    for (NSString *source in _selectItems) {
+    
+    [_selectItems enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(id obj, NSUInteger idx, BOOL * stop) {
         
-        [generator generateWithSource:source config:_config callback:^BOOL(NSString *path, BOOL success) {
+        [generator generateWithSource:obj config:_config callback:^BOOL(NSString *path, BOOL success) {
             
-            if (success) {[weakself.selectItems removeObject:source];}
+            if (success) {[weakself.selectItems removeObject:obj];}
             return YES;
         }];
         [self updateBadge];
-    }
+    }];
 }
 - (IBAction)clickedCheckBtn:(id)sender {
     
@@ -131,6 +137,15 @@
             [self updateBadge];
         };
     }
+}
+
+#pragma mark - IHHandleFileDelegate
+
+- (void)openFiles:(NSArray<NSString *> *)files {
+    
+    [_selectItems addObjectsFromArray:files];
+    
+    [self updateBadge];
 }
 
 #pragma mark - IHConfigVCDelegate

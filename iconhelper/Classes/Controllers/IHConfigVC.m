@@ -184,7 +184,6 @@
     IHConfig.specifyDestination = !sender.isSelected;
 }
 
-
 #pragma mark - Setter
 
 - (void)setAppIconConfig:(IHAppIconConfig *)appIconConfig {

@@ -116,7 +116,7 @@
         
         [self generateWithSource:source
                            sizes:iOS
-                       directory:[name stringByAppendingString:@"_iOSAppIcon"]
+                       directory:[name stringByAppendingString:@"iOSAppIcon"]
                         callback:block];
     }
     if (type & AppIconType_macOS) {
