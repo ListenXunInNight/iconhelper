@@ -135,7 +135,7 @@
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="IHMainVC" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
+                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl" customClass="IHDragDropView">
                         <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -201,7 +201,7 @@
                                 <rect key="frame" x="180" y="83" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="ieJ-Oi-NiI"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="vyv-9r-C9x"/>
+                                    <constraint firstAttribute="width" constant="20" id="vyv-9r-C9x"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="1" drawsBackground="YES" usesSingleLineMode="YES" id="Jns-ne-R0W">
                                     <font key="font" metaFont="system"/>
@@ -220,6 +220,7 @@
                             <constraint firstItem="OZz-XP-6ra" firstAttribute="top" secondItem="JRM-LM-Rdd" secondAttribute="bottom" constant="6" id="hkH-wa-5Ir"/>
                             <constraint firstAttribute="trailing" secondItem="JRM-LM-Rdd" secondAttribute="trailing" constant="7" id="hq2-bA-9W6"/>
                             <constraint firstAttribute="trailing" secondItem="OZz-XP-6ra" secondAttribute="trailing" constant="7" id="iCj-6I-Hgs"/>
+                            <constraint firstItem="JRM-LM-Rdd" firstAttribute="leading" secondItem="Zn2-ov-XQL" secondAttribute="trailing" constant="6" id="jvs-5y-3qq"/>
                             <constraint firstAttribute="bottom" secondItem="OZz-XP-6ra" secondAttribute="bottom" constant="7" id="pNX-hg-AOv"/>
                             <constraint firstItem="Zn2-ov-XQL" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="7" id="so4-uO-juD"/>
                             <constraint firstItem="MY5-xI-lhc" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="7" id="yJf-sJ-Pep"/>

@@ -13,8 +13,9 @@
 #import "IHConfig.h"
 #import "IHSelectImageVC.h"
 #import "AppDelegate.h"
+#import "IHDragDropView.h"
 
-@interface IHMainVC () <IHConfigVCDelegate, IHHandleFileDelegate>
+@interface IHMainVC () <IHConfigVCDelegate, IHHandleFileDelegate, IHDragDropViewDelegate>
 
 @property (weak) IBOutlet NSButton *importBtn;
 @property (weak) IBOutlet NSButton *configBtn;
@@ -38,6 +39,7 @@
     AppDelegate *delegate = [NSApplication sharedApplication].delegate;
     
     delegate.handleFileDelegate = self;
+    [(IHDragDropView *)self.view setDelegate:self];
 }
 
 - (void)setupUI {
@@ -152,6 +154,30 @@
 
 - (void)cancelWithConfigVC:(IHConfigVC *)vc {
     [self dismissViewController:vc];
+}
+
+#pragma mark - IHDragDropViewDelegate
+
+- (void)dragDropFiles:(NSArray<NSString *> *)paths
+       inDragDropView:(IHDragDropView *)dragDropView {
+    
+    NSMutableArray *filterArr = paths.mutableCopy;
+    
+    for (int i = 0; ;) {
+        
+        if (i == filterArr.count - 1) break;
+        NSString *suffix = [filterArr[i] pathExtension];
+        if (([suffix compare:@"png" options:NSCaseInsensitiveSearch] == NSOrderedSame) ||
+            ([suffix compare:@"jpg" options:NSCaseInsensitiveSearch] == NSOrderedSame) ||
+            ([suffix compare:@"jpeg" options:NSCaseInsensitiveSearch] == NSOrderedSame)) {
+            i++;
+        }
+        else {
+            [filterArr removeObjectAtIndex:i];
+        }
+    }
+    
+    [self openFiles:filterArr];
 }
 
 - (void)okWithConfig:(IHConfig *)config VC:(IHConfigVC *)vc {

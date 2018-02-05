@@ -10,6 +10,7 @@
 		A15321BA1FD9090D00863285 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A15321B91FD9090D00863285 /* AppDelegate.m */; };
 		A15321C21FD9090D00863285 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A15321C01FD9090D00863285 /* Main.storyboard */; };
 		A15321C51FD9090D00863285 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A15321C41FD9090D00863285 /* main.m */; };
+		A159F1D32027FC53008B0E7F /* IHDragDropView.m in Sources */ = {isa = PBXBuildFile; fileRef = A159F1D22027FC53008B0E7F /* IHDragDropView.m */; };
 		A1767CF11FDBCBED00303821 /* IHConfigVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1767CF01FDBCBED00303821 /* IHConfigVC.m */; };
 		A1767CFA1FDBE11200303821 /* IHButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A1767CF91FDBE11200303821 /* IHButton.m */; };
 		A1767CFD1FDBEA1900303821 /* IHConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A1767CFC1FDBEA1900303821 /* IHConfig.m */; };
@@ -35,6 +36,8 @@
 		A15321C41FD9090D00863285 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A15321C61FD9090D00863285 /* iconhelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iconhelper.entitlements; sourceTree = "<group>"; };
 		A153269C1FD9680400863285 /* color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = color.xcassets; sourceTree = "<group>"; };
+		A159F1D12027FC53008B0E7F /* IHDragDropView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IHDragDropView.h; sourceTree = "<group>"; };
+		A159F1D22027FC53008B0E7F /* IHDragDropView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IHDragDropView.m; sourceTree = "<group>"; };
 		A1767CEF1FDBCBED00303821 /* IHConfigVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IHConfigVC.h; sourceTree = "<group>"; };
 		A1767CF01FDBCBED00303821 /* IHConfigVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IHConfigVC.m; sourceTree = "<group>"; };
 		A1767CF81FDBE11200303821 /* IHButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IHButton.h; sourceTree = "<group>"; };
@@ -158,6 +161,8 @@
 				A1AF16471FDE55C500B8532F /* IHImageItem.h */,
 				A1AF16481FDE55C500B8532F /* IHImageItem.m */,
 				A1AF16491FDE55C500B8532F /* IHImageItem.xib */,
+				A159F1D12027FC53008B0E7F /* IHDragDropView.h */,
+				A159F1D22027FC53008B0E7F /* IHDragDropView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 				A1E1FF901FDA5D1800CA510B /* IHMainVC.m in Sources */,
 				A1767D001FDBF7D800303821 /* NSFileManager+IconHelper.m in Sources */,
 				A1AF164A1FDE55C500B8532F /* IHImageItem.m in Sources */,
+				A159F1D32027FC53008B0E7F /* IHDragDropView.m in Sources */,
 				A1767CFD1FDBEA1900303821 /* IHConfig.m in Sources */,
 				A1E1FFA41FDA907500CA510B /* IHFilePanel.m in Sources */,
 				A15321C51FD9090D00863285 /* main.m in Sources */,
