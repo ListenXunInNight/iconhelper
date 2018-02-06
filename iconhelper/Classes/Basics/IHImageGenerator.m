@@ -64,7 +64,7 @@
         else {
             
             NSString *prefix = @"";
-            if (IHConfig.specifyDestination) {
+            if (IHConfig.isSpecifyDestination) {
                 self.destination = [source stringByDeletingLastPathComponent];
                 prefix = @"resize_";
             }
@@ -104,7 +104,7 @@
                       type:(AppIconType)type
                   callback:(CreateImageBlock)block {
     
-    if (IHConfig.specifyDestination) self.destination = [source stringByDeletingLastPathComponent];
+    if (IHConfig.isSpecifyDestination) self.destination = [source stringByDeletingLastPathComponent];
     NSArray <NSNumber *> *macOS = @[@1024, @512, @256, @128, @64, @32, @16];
     NSArray <NSNumber *> *iOS = @[@1024, @180, @167, @152, @120, @87,
                                   @80, @76, @60, @58, @40, @29, @20];
@@ -160,7 +160,7 @@
 - (void)generateWithSource:(NSString *)source
                   callback:(CreateImageBlock)block {
     
-    if (IHConfig.specifyDestination) self.destination = [source stringByDeletingLastPathComponent];
+    if (IHConfig.isSpecifyDestination) self.destination = [source stringByDeletingLastPathComponent];
     
     NSString *suffix = @".png";
     NSString *name = [[source lastPathComponent] stringByDeletingPathExtension];

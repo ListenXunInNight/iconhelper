@@ -28,7 +28,7 @@ typedef NS_ENUM(NSUInteger, ScaleImageWay) {
 @property (class, readonly) IHConfig *lastConfig;
 
 @property (class) NSString *destination;
-@property (class) BOOL specifyDestination;
+@property (class, getter=isSpecifyDestination) BOOL specifyDestination;
 
 @end
 

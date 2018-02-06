@@ -81,6 +81,9 @@
         self.scaleImageConfig = (id)_config;
         [self clickedScaleBtn:_scaleBtn];
     }
+    
+    _defaultBtn.selected = IHConfig.isSpecifyDestination;
+    _pathControl.enabled = !IHConfig.isSpecifyDestination;
 }
 
 #pragma mark - Btn Clicked
@@ -152,6 +155,8 @@
             [self.delegate okWithConfig:_config VC:self];
         }
     }
+    
+    [IHConfig setSpecifyDestination:_defaultBtn.isSelected];
 }
 - (IBAction)changeSegmentedControlValue:(id)sender {
     

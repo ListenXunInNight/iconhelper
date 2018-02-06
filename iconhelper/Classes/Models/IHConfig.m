@@ -66,7 +66,7 @@
 }
 
 #define kSpecifyDestination @"IS_SPECIFY_DESTINATION"
-+ (BOOL)specifyDestination {
++ (BOOL)isSpecifyDestination {
     
     return [[[NSUserDefaults standardUserDefaults] valueForKey:kSpecifyDestination] boolValue];
 }
