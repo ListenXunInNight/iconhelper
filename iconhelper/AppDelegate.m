@@ -37,5 +37,9 @@
     // Insert code here to tear down your application
 }
 
+- (IBAction)clickedGithubHelper:(id)sender {
+    
+    [[NSWorkspace sharedWorkspace] openURL: [NSURL URLWithString:@"https://github.com/ListenXunInNight/iconhelper"]];
+}
 
 @end
