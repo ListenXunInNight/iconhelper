@@ -8,6 +8,7 @@
 
 #import "IHImageGenerator.h"
 #import "IHConfig.h"
+#import "IHExportLog.h"
 
 @implementation NSImage (IHImageGenerator)
 
@@ -45,29 +46,34 @@
 }
 
 - (void)generateWithSource:(NSString *)source
-                    config:(IHConfig *)config
-                  callback:(CreateImageBlock)block {
+                    config:(IHConfig *)config {
     
     if ([config isKindOfClass:NSClassFromString(@"IHAppIconConfig")]) {
         
         AppIconType type = [[config valueForKey:@"type"] unsignedIntValue];
         
-        [self generateWithSource:source type:type callback:block];
+        [self generateWithSource:source type:type];
     }
     else if ([config isKindOfClass:NSClassFromString(@"IHScaleImageConfig")]) {
         
         ScaleImageWay way = [[config valueForKey:@"way"] unsignedIntValue];
         
         if (way == ScaleImageNormal) {
-            [self generateWithSource:source callback:block];
+            [self generateWithSource:source];
         }
         else {
             
-            NSString *prefix = @"";
-            if (IHConfig.isSpecifyDestination) {
-                self.destination = [source stringByDeletingLastPathComponent];
-                prefix = @"resize_";
+            NSString *destination = nil;
+            if (!IHConfig.isSpecifyDestination) {
+                destination = [source stringByDeletingLastPathComponent];
             }
+            else {
+                destination = IHConfig.destination;
+            }
+            
+            NSString *name = [[source lastPathComponent] stringByDeletingPathExtension];
+            NSString *extension = [source pathExtension];
+            
             
             NSImage *image = [[NSImage alloc] initWithContentsOfFile:source];
             
@@ -87,12 +93,12 @@
             if ([suffix isEqualToString:@"jpg"] ||
                 [suffix isEqualToString:@"jpeg"]) {
                 
-                NSString *imagePath = [self.destination stringByAppendingFormat:@"/%@%@", prefix, [source lastPathComponent]];
+                NSString *imagePath = [destination stringByAppendingFormat:@"/%@_%dx%d.%@", name, size.width, size.height, extension];
                 NSData *data = [image dataWithSize:size type:NSBitmapImageFileTypePNG];
                 [data writeToFile:imagePath atomically:YES];
             }
             else {
-                NSString *imagePath = [self.destination stringByAppendingFormat:@"/%@%@", prefix, [source lastPathComponent]];
+                NSString *imagePath = [destination stringByAppendingFormat:@"/%@_%dx%d.%@", name, size.width, size.height, extension];
                 NSData *data = [image dataWithSize:size];
                 [data writeToFile:imagePath atomically:YES];
             }
@@ -101,81 +107,90 @@
 }
 
 - (void)generateWithSource:(NSString *)source
-                      type:(AppIconType)type
-                  callback:(CreateImageBlock)block {
+                      type:(AppIconType)type {
     
-    if (IHConfig.isSpecifyDestination) self.destination = [source stringByDeletingLastPathComponent];
     NSArray <NSNumber *> *macOS = @[@1024, @512, @256, @128, @64, @32, @16];
     NSArray <NSNumber *> *iOS = @[@1024, @180, @167, @152, @120, @87,
                                   @80, @76, @60, @58, @40, @29, @20];
     NSArray <NSNumber *> *watchOS = @[@1024, @196, @172, @88, @87, @80, @58, @55, @48];
     
-    NSString *name = [[source lastPathComponent] stringByDeletingLastPathComponent];
+    NSString *destination = nil;
+    
+    if (IHConfig.isSpecifyDestination) {
+        
+        destination = [IHConfig.destination stringByAppendingPathComponent:[[source lastPathComponent] stringByDeletingPathExtension]];
+    }
+    else {
+        destination = [[source lastPathComponent] stringByDeletingPathExtension];
+    }
     
     if (type & AppIconType_iOS) {
         
         [self generateWithSource:source
                            sizes:iOS
-                       directory:[name stringByAppendingString:@"iOSAppIcon"]
-                        callback:block];
+                       directory:[destination stringByAppendingString:@"/iOSAppIcon"]];
     }
     if (type & AppIconType_macOS) {
         
         [self generateWithSource:source
                            sizes:macOS
-                       directory:[name stringByAppendingString:@"macOSAppIcon"]
-                        callback:block];
+                       directory:[destination stringByAppendingString:@"/macOSAppIcon"]];
     }
     if (type & AppIconType_watchOS) {
         
         [self generateWithSource:source
                            sizes:watchOS
-                       directory:[name stringByAppendingString:@"watchOSAppIcon"]
-                        callback:block];
+                       directory:[destination stringByAppendingString:@"/watchOSAppIcon"]];
     }
 }
 
 - (void)generateWithSource:(NSString *)source
                      sizes:(NSArray <NSNumber *> *)sizes
-                 directory:(NSString *)directory
-                  callback:(CreateImageBlock)block {
+                 directory:(NSString *)directory {
     
-    NSString *des = [self.destination stringByAppendingPathComponent:directory];
     NSFileManager *fm = [NSFileManager defaultManager];
-    if (![fm fileExistsAtPath:des]) {
-        [fm createDirectoryAtPath:des withIntermediateDirectories:YES attributes:nil error:nil];
+    if (![fm fileExistsAtPath:directory]) {
+        [fm createDirectoryAtPath:directory withIntermediateDirectories:YES attributes:nil error:nil];
     }
     NSImage *image = [[NSImage alloc] initWithContentsOfFile:source];
     for (int i = 0; i < sizes.count; i++) {
         
-        NSString *imagePath = [des stringByAppendingFormat:@"/AppIcon_%@.png", sizes[i]];
+        NSString *imagePath = [directory stringByAppendingFormat:@"/%@_%@.png", [source.lastPathComponent stringByDeletingPathExtension], sizes[i]];
         CGSize size = CGSizeMake(sizes[i].floatValue, sizes[i].floatValue);
         NSData *data = [image dataWithSize:size];
         BOOL result = [data writeToFile:imagePath atomically:YES];
         
-        if (block) if (!block(source, result)) break;
+        result?: [IHExportLog exportImageFailed:imagePath];
     }
 }
 
-- (void)generateWithSource:(NSString *)source
-                  callback:(CreateImageBlock)block {
+- (void)generateWithSource:(NSString *)source {
     
-    if (IHConfig.isSpecifyDestination) self.destination = [source stringByDeletingLastPathComponent];
+    NSString *destination = IHConfig.isSpecifyDestination?IHConfig.destination:[source stringByDeletingPathExtension];
     
-    NSString *suffix = @".png";
     NSString *name = [[source lastPathComponent] stringByDeletingPathExtension];
+    NSString *extension = source.pathExtension;
     NSImage *image = [[NSImage alloc] initWithContentsOfFile:source];
     
-    CGSize size[3] = {CGSizeMake((int)(image.size.width / 3), (int)(image.size.height / 3)),
-        CGSizeMake((int)(image.size.width * 2 / 3), (int)(image.size.height * 2 / 3)),
+    NSFileManager *fm = [NSFileManager defaultManager];
+    
+    if (![fm fileExistsAtPath:destination]) {
+        [fm createDirectoryAtPath:destination
+      withIntermediateDirectories:YES
+                       attributes:NULL
+                            error:NULL];
+    }
+    
+    CGSize size[3] = {CGSizeMake((int)(image.size.width / 3.f), (int)(image.size.height / 3.f)),
+        CGSizeMake((int)(image.size.width * 2 / 3.f), (int)(image.size.height * 2 / 3.f)),
         image.size};
     
     for (int i = 0; i < 3; i++) {
         
-        NSString *scale = [self.destination stringByAppendingFormat:@"/%@@%dx%@", name, i + 1, suffix];
+        NSString *imagePath = [destination stringByAppendingFormat:@"/%@@%dx.%@", name, i + 1, extension];
         NSData *data = [image dataWithSize:size[i]];
-        BOOL result = [data writeToFile:scale atomically:YES];
-        if (block) if (!block(scale, result)) break;
+        BOOL result = [data writeToFile:imagePath atomically:YES];
+        result?: [IHExportLog exportImageFailed:imagePath];
     }
 }
 

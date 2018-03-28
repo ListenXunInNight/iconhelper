@@ -15,16 +15,11 @@
 
 @class IHConfig;
 
-typedef BOOL (^CreateImageBlock)(NSString *path, BOOL success);
-
 @interface IHImageGenerator: NSObject
-
-@property (nonatomic, strong) NSString *destination;
 
 + (instancetype)generator;
 
 - (void)generateWithSource:(NSString *)source
-                    config:(IHConfig *)config
-                  callback:(CreateImageBlock)block;
+                    config:(IHConfig *)config;
 
 @end

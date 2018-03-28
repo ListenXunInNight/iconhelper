@@ -15,6 +15,7 @@
 		A1767CFA1FDBE11200303821 /* IHButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A1767CF91FDBE11200303821 /* IHButton.m */; };
 		A1767CFD1FDBEA1900303821 /* IHConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A1767CFC1FDBEA1900303821 /* IHConfig.m */; };
 		A1767D001FDBF7D800303821 /* NSFileManager+IconHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A1767CFF1FDBF7D800303821 /* NSFileManager+IconHelper.m */; };
+		A18B2F14206BBAA8005E680A /* IHExportLog.m in Sources */ = {isa = PBXBuildFile; fileRef = A18B2F13206BBAA8005E680A /* IHExportLog.m */; };
 		A1AF163C1FDE427100B8532F /* IHSelectImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1AF163B1FDE427100B8532F /* IHSelectImageVC.m */; };
 		A1AF164A1FDE55C500B8532F /* IHImageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A1AF16481FDE55C500B8532F /* IHImageItem.m */; };
 		A1AF164B1FDE55C500B8532F /* IHImageItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1AF16491FDE55C500B8532F /* IHImageItem.xib */; };
@@ -23,6 +24,7 @@
 		A1E1FF751FDA2DC800CA510B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A15321BE1FD9090D00863285 /* Assets.xcassets */; };
 		A1E1FF901FDA5D1800CA510B /* IHMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E1FF8F1FDA5D1800CA510B /* IHMainVC.m */; };
 		A1E1FFA41FDA907500CA510B /* IHFilePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E1FFA31FDA907500CA510B /* IHFilePanel.m */; };
+		A1EAE1B520634D0600F826EB /* IHMainVC+IHGithubStar.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EAE1B420634D0600F826EB /* IHMainVC+IHGithubStar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		A1767CFC1FDBEA1900303821 /* IHConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IHConfig.m; sourceTree = "<group>"; };
 		A1767CFE1FDBF7D800303821 /* NSFileManager+IconHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+IconHelper.h"; sourceTree = "<group>"; };
 		A1767CFF1FDBF7D800303821 /* NSFileManager+IconHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+IconHelper.m"; sourceTree = "<group>"; };
+		A18B2F12206BBAA7005E680A /* IHExportLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHExportLog.h; sourceTree = "<group>"; };
+		A18B2F13206BBAA8005E680A /* IHExportLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHExportLog.m; sourceTree = "<group>"; };
 		A1AF163A1FDE427100B8532F /* IHSelectImageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IHSelectImageVC.h; sourceTree = "<group>"; };
 		A1AF163B1FDE427100B8532F /* IHSelectImageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IHSelectImageVC.m; sourceTree = "<group>"; };
 		A1AF16471FDE55C500B8532F /* IHImageItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IHImageItem.h; sourceTree = "<group>"; };
@@ -59,6 +63,8 @@
 		A1E1FF8F1FDA5D1800CA510B /* IHMainVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IHMainVC.m; sourceTree = "<group>"; };
 		A1E1FFA21FDA907500CA510B /* IHFilePanel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IHFilePanel.h; sourceTree = "<group>"; };
 		A1E1FFA31FDA907500CA510B /* IHFilePanel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IHFilePanel.m; sourceTree = "<group>"; };
+		A1EAE1B320634D0600F826EB /* IHMainVC+IHGithubStar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IHMainVC+IHGithubStar.h"; sourceTree = "<group>"; };
+		A1EAE1B420634D0600F826EB /* IHMainVC+IHGithubStar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "IHMainVC+IHGithubStar.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,8 @@
 		A1E1FF851FDA5C8200CA510B /* Basics */ = {
 			isa = PBXGroup;
 			children = (
+				A18B2F12206BBAA7005E680A /* IHExportLog.h */,
+				A18B2F13206BBAA8005E680A /* IHExportLog.m */,
 				A1B6AB971FDB8CF1000295E0 /* IHImageGenerator.h */,
 				A1B6AB981FDB8CF1000295E0 /* IHImageGenerator.m */,
 				A1767CFE1FDBF7D800303821 /* NSFileManager+IconHelper.h */,
@@ -138,6 +146,8 @@
 				A1AF18BD1FDE6BCA00B8532F /* IHWindowController.h */,
 				A1AF18BE1FDE6BCA00B8532F /* IHWindowController.m */,
 				A123EA121FFB37D400C2617C /* IHHandleFileDelegate.h */,
+				A1EAE1B320634D0600F826EB /* IHMainVC+IHGithubStar.h */,
+				A1EAE1B420634D0600F826EB /* IHMainVC+IHGithubStar.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -244,8 +254,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A18B2F14206BBAA8005E680A /* IHExportLog.m in Sources */,
 				A1AF18BF1FDE6BCA00B8532F /* IHWindowController.m in Sources */,
 				A1E1FF901FDA5D1800CA510B /* IHMainVC.m in Sources */,
+				A1EAE1B520634D0600F826EB /* IHMainVC+IHGithubStar.m in Sources */,
 				A1767D001FDBF7D800303821 /* NSFileManager+IconHelper.m in Sources */,
 				A1AF164A1FDE55C500B8532F /* IHImageItem.m in Sources */,
 				A159F1D32027FC53008B0E7F /* IHDragDropView.m in Sources */,

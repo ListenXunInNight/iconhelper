@@ -49,6 +49,7 @@
 + (void)setDestination:(NSString *)destination {
     
     [[NSUserDefaults standardUserDefaults] setValue:destination forKey:kDestination];
+    [self setSpecifyDestination:YES];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
@@ -59,7 +60,7 @@
     if ((!directory) || [directory isKindOfClass:[NSNull class]] ||
         (!directory.length)) {
         
-        directory = NSHomeDirectory();
+        directory = [NSHomeDirectory() stringByAppendingPathComponent:NSUserName()];
     }
     
     return directory;

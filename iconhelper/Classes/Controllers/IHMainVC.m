@@ -14,6 +14,7 @@
 #import "IHSelectImageVC.h"
 #import "AppDelegate.h"
 #import "IHDragDropView.h"
+#import "IHMainVC+IHGithubStar.h"
 
 @interface IHMainVC () <IHConfigVCDelegate, IHHandleFileDelegate, IHDragDropViewDelegate>
 
@@ -98,16 +99,15 @@
     }
     __weak typeof(self) weakself = self;
     IHImageGenerator *generator = [IHImageGenerator generator];
-    generator.destination = IHConfig.destination;
     
     [_selectItems enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(id obj, NSUInteger idx, BOOL * stop) {
+        [generator generateWithSource:obj config:_config];
+        [weakself.selectItems removeObject:obj];
         
-        [generator generateWithSource:obj config:_config callback:^BOOL(NSString *path, BOOL success) {
-            
-            if (success) {[weakself.selectItems removeObject:obj];}
-            return YES;
-        }];
         [self updateBadge];
+        if (weakself.selectItems.count == 0) {
+            [weakself showGithubStarDialogIfNeed];
+        }
     }];
 }
 - (IBAction)clickedCheckBtn:(id)sender {

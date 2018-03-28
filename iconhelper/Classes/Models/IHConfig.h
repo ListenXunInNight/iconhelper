@@ -32,6 +32,7 @@ typedef NS_ENUM(NSUInteger, ScaleImageWay) {
 
 @end
 
+
 @interface IHAppIconConfig: IHConfig <NSCoding>
 @property (nonatomic, assign) AppIconType type;
 @end
