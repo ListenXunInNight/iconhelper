@@ -23,8 +23,6 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
-                                        <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                                         <menuItem title="Services" id="NMo-om-nkz">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
@@ -41,13 +39,6 @@
                                                 <action selector="hideOtherApplications:" target="Ady-hI-5gd" id="VT4-aY-XCT"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Show All" id="Kd2-mp-pUS">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="unhideAllApplications:" target="Ady-hI-5gd" id="Dhg-Le-xox"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
                                         <menuItem title="Quit iconhelper" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
@@ -365,7 +356,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jjt-Mn-PXb" customClass="IHButton">
-                                <rect key="frame" x="18" y="156" width="149" height="40"/>
+                                <rect key="frame" x="18" y="156" width="124" height="40"/>
                                 <buttonCell key="cell" type="bevel" title="Scale Image" bezelStyle="regularSquare" image="uncheck" imagePosition="left" borderStyle="border" sound="Bottle" inset="2" id="u5D-Ei-Hxb">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -460,7 +451,6 @@
                             <constraint firstItem="o7r-ng-dPg" firstAttribute="centerX" secondItem="35c-Ui-eLy" secondAttribute="centerX" id="Lom-vp-sOp"/>
                             <constraint firstItem="PvC-t2-Iic" firstAttribute="leading" secondItem="9H4-el-sfD" secondAttribute="trailing" constant="41" id="QSu-Ka-Ujr"/>
                             <constraint firstAttribute="trailing" secondItem="00s-Hl-xb0" secondAttribute="trailing" constant="11" id="Rpf-v6-zMq"/>
-                            <constraint firstItem="VoK-JW-M05" firstAttribute="trailing" secondItem="Jjt-Mn-PXb" secondAttribute="trailing" id="UuQ-kq-Yhg"/>
                             <constraint firstItem="PvC-t2-Iic" firstAttribute="top" secondItem="35c-Ui-eLy" secondAttribute="top" constant="35" id="V0P-TS-1WA"/>
                             <constraint firstItem="yvj-hF-TDb" firstAttribute="top" secondItem="5QV-Pt-FYw" secondAttribute="bottom" constant="55" id="XPO-Zd-4eU"/>
                             <constraint firstItem="oGS-hz-uVs" firstAttribute="top" secondItem="35c-Ui-eLy" secondAttribute="top" constant="35" id="YKW-l1-DBo"/>

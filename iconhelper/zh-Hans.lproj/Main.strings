@@ -1,0 +1,108 @@
+
+/* Class = "NSSegmentedCell"; 1RK-Xl-L8a.ibShadowedLabels[0] = "normal"; ObjectID = "1RK-Xl-L8a"; */
+"1RK-Xl-L8a.ibShadowedLabels[0]" = "正常";
+
+/* Class = "NSSegmentedCell"; 1RK-Xl-L8a.ibShadowedLabels[1] = "size"; ObjectID = "1RK-Xl-L8a"; */
+"1RK-Xl-L8a.ibShadowedLabels[1]" = "尺寸";
+
+/* Class = "NSSegmentedCell"; 1RK-Xl-L8a.ibShadowedLabels[2] = "rate"; ObjectID = "1RK-Xl-L8a"; */
+"1RK-Xl-L8a.ibShadowedLabels[2]" = "比例";
+
+/* Class = "NSMenuItem"; title = "iconhelper"; ObjectID = "1Xt-HY-uBw"; */
+"1Xt-HY-uBw.title" = "图片助手";
+
+/* Class = "NSButtonCell"; title = "Select All"; ObjectID = "2SN-d5-yL0"; */
+"2SN-d5-yL0.title" = "全选";
+
+/* Class = "NSMenuItem"; title = "Quit iconhelper"; ObjectID = "4sb-4s-VLi"; */
+"4sb-4s-VLi.title" = "退出";
+
+/* Class = "NSMenuItem"; title = "About iconhelper"; ObjectID = "5kV-Vb-QxS"; */
+"5kV-Vb-QxS.title" = "关于";
+
+/* Class = "NSButtonCell"; title = "iWatch"; ObjectID = "9qQ-zp-pCd"; */
+"9qQ-zp-pCd.title" = "iWatch";
+
+/* Class = "NSTextFieldCell"; title = "Height:"; ObjectID = "AC9-Gh-YfJ"; */
+"AC9-Gh-YfJ.title" = "高度：";
+
+/* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
+"AYu-sK-qS6.title" = "主页";
+
+/* Class = "NSMenuItem"; title = "Close"; ObjectID = "DVo-aG-piG"; */
+"DVo-aG-piG.title" = "关闭";
+
+/* Class = "NSMenu"; title = "Help"; ObjectID = "F2S-fz-NVQ"; */
+"F2S-fz-NVQ.title" = "帮助";
+
+/* Class = "NSMenuItem"; title = "Github"; ObjectID = "FKE-Sm-Kum"; */
+"FKE-Sm-Kum.title" = "Github";
+
+/* Class = "NSMenuItem"; title = "Open…"; ObjectID = "IAo-SY-fd9"; */
+"IAo-SY-fd9.title" = "打开";
+
+/* Class = "NSWindow"; title = "图片工具"; ObjectID = "IQv-IB-iLA"; */
+"IQv-IB-iLA.title" = "图标助手";
+
+/* Class = "NSTextFieldCell"; title = "1"; ObjectID = "Jns-ne-R0W"; */
+"Jns-ne-R0W.title" = "1";
+
+/* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "LE2-aR-0XJ"; */
+"LE2-aR-0XJ.title" = "所有窗口前置";
+
+/* Class = "NSButtonCell"; title = "iPhone"; ObjectID = "Lie-3v-LsI"; */
+"Lie-3v-LsI.title" = "iPhone";
+
+/* Class = "NSButtonCell"; title = "Unselect All"; ObjectID = "M34-PU-Ocw"; */
+"M34-PU-Ocw.title" = "取消";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "NMo-om-nkz"; */
+"NMo-om-nkz.title" = "服务";
+
+/* Class = "NSMenuItem"; title = "Hide iconhelper"; ObjectID = "Olw-nP-bQN"; */
+"Olw-nP-bQN.title" = "隐藏图片助手";
+
+/* Class = "NSViewController"; title = "选中图片"; ObjectID = "PZF-bm-mun"; */
+"PZF-bm-mun.title" = "选中图片";
+
+/* Class = "NSMenu"; title = "Window"; ObjectID = "Td7-aD-5lo"; */
+"Td7-aD-5lo.title" = "窗口";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Vdr-fp-XzO"; */
+"Vdr-fp-XzO.title" = "隐藏其他";
+
+/* Class = "NSButtonCell"; title = "iMac"; ObjectID = "ZmY-1f-2bR"; */
+"ZmY-1f-2bR.title" = "iMac";
+
+/* Class = "NSMenuItem"; title = "Window"; ObjectID = "aUF-d1-5bR"; */
+"aUF-d1-5bR.title" = "窗口";
+
+/* Class = "NSMenu"; title = "File"; ObjectID = "bib-Uj-vzu"; */
+"bib-Uj-vzu.title" = "文件";
+
+/* Class = "NSMenuItem"; title = "File"; ObjectID = "dMs-cI-mzQ"; */
+"dMs-cI-mzQ.title" = "文件";
+
+/* Class = "NSViewController"; title = "配置"; ObjectID = "flP-aj-Abq"; */
+"flP-aj-Abq.title" = "配置";
+
+/* Class = "NSMenu"; title = "Services"; ObjectID = "hz9-B4-Xy5"; */
+"hz9-B4-Xy5.title" = "服务";
+
+/* Class = "NSButtonCell"; title = "Default Path"; ObjectID = "jhW-CA-poU"; */
+"jhW-CA-poU.title" = "默认路径";
+
+/* Class = "NSButtonCell"; title = "App Icon"; ObjectID = "k6M-c7-efh"; */
+"k6M-c7-efh.title" = "App 图标";
+
+/* Class = "NSTextFieldCell"; title = "Width :"; ObjectID = "rP6-I5-sxP"; */
+"rP6-I5-sxP.title" = "宽度：";
+
+/* Class = "NSButtonCell"; title = "Scale Image"; ObjectID = "u5D-Ei-Hxb"; */
+"u5D-Ei-Hxb.title" = "缩放图片";
+
+/* Class = "NSMenu"; title = "iconhelper"; ObjectID = "uQy-DD-JDr"; */
+"uQy-DD-JDr.title" = "图标助手";
+
+/* Class = "NSMenuItem"; title = "Help"; ObjectID = "wpr-3q-Mcd"; */
+"wpr-3q-Mcd.title" = "帮助";
