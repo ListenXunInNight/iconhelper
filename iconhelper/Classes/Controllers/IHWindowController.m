@@ -18,6 +18,7 @@
     [super windowDidLoad];
     
     self.window.acceptsMouseMovedEvents = YES;
+    [[self.window standardWindowButton:NSWindowZoomButton] removeFromSuperview];
 }
 
 - (void)windowWillClose:(NSNotification *)notification {

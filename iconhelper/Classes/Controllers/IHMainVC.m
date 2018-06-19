@@ -14,7 +14,6 @@
 #import "IHSelectImageVC.h"
 #import "AppDelegate.h"
 #import "IHDragDropView.h"
-#import "IHMainVC+IHGithubStar.h"
 
 @interface IHMainVC () <IHConfigVCDelegate, IHHandleFileDelegate, IHDragDropViewDelegate>
 
@@ -43,16 +42,8 @@
     [(IHDragDropView *)self.view setDelegate:self];
 }
 
-- (void)setupUI {
-    
-    [[[NSApplication sharedApplication].keyWindow standardWindowButton:NSWindowZoomButton] removeFromSuperview];
-    _badgeTF.layer.cornerRadius = 10.f;
-    _badgeTF.layer.masksToBounds = YES;
-}
-
 - (void)viewWillAppear {
     [super viewWillAppear];
-    [self setupUI];
 }
 
 #pragma mark - Btn Clicked
@@ -101,12 +92,12 @@
     IHImageGenerator *generator = [IHImageGenerator generator];
     
     [_selectItems enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(id obj, NSUInteger idx, BOOL * stop) {
-        [generator generateWithSource:obj config:_config];
+        [generator generateWithSource:obj config:weakself.config];
         [weakself.selectItems removeObject:obj];
         
         [self updateBadge];
         if (weakself.selectItems.count == 0) {
-            [weakself showGithubStarDialogIfNeed];
+            
         }
     }];
 }
@@ -119,6 +110,8 @@
     
     _badgeTF.hidden = !_selectItems.count;
     _badgeTF.stringValue = @(_selectItems.count).stringValue;
+    _badgeTF.layer.cornerRadius = 10.f;
+    _badgeTF.layer.masksToBounds = YES;
 }
 
 - (void)prepareForSegue:(NSStoryboardSegue *)segue sender:(id)sender {
